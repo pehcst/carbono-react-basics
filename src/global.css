@@ -14,7 +14,7 @@ body {
 
 input,
 button {
-  font: 400 18px Poppins, sans-serif;
+  font: 400 14px Poppins, sans-serif;
 }
 
 button {
@@ -24,10 +24,11 @@ button {
 form input {
   width: 100%;
   height: 60px;
-  color: #333;
+  margin-bottom: 5px;
+  color: #7b7b7b;
   border: 1px solid #dcdce6;
-  border-radius: 5px;
-  padding: 0 24px;
+  border-radius: 10px;
+  padding: 0 20px;
 }
 
 .button {
@@ -36,9 +37,9 @@ form input {
   background: #008b5a;
   border: 0;
   border-radius: 10px;
-  color: #ddd;
+  color: #fff;
   font-weight: 700;
-  margin-top: 16px;
+  margin-top: 10px;
   display: inline-block;
   text-align: center;
   text-decoration: none;
@@ -49,4 +50,23 @@ form input {
 
 .button:hover {
   filter: brightness(80%);
+}
+
+.return-link {
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+  color: #008b5a;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: 400;
+  transition: opacity 0.2s;
+}
+
+.return-link svg {
+  margin-right: 8px;
+}
+
+.return-link:hover {
+  opacity: 0.8;
 }
