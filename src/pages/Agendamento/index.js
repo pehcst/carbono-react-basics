@@ -10,12 +10,14 @@ function Agendamento() {
     <div className="agendamento-container">
       <header>
         <img src={logoImg} alt="Unimed Volta Redonda" />
-        <span>Agendamento de exames</span>
+      </header>
+      <div className="info-section">
+        <h1>Agendamentos realizados</h1>
         <Link className="button" to="/agendar">
           Realizar um agendamento
         </Link>
-      </header>
-      <h1>Agendamentos realizados</h1>
+      </div>
+
       <ul>
         <li>
           <strong>Exame</strong>
