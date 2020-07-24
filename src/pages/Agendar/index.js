@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
+import api from "../../services/api";
 
 import "./styles.css";
 import logoImg from "../../assets/logo.svg";
 export default function Agendar() {
+  const [paciente, sPaciente] = useState("");
+  const [exame, sExame] = useState("");
+  const [data, sData] = useState("");
+
+  async function agendarPaciente(e) {
+    e.preventDefault();
+
+    const dados = { paciente, exame, data };
+    try {
+      await api.post("/agendamentos", dados);
+      alert("cadastro realizado com sucesso");
+    } catch (err) {
+      alert("erro no cadastro, tente novamente");
+    }
+  }
+
   return (
     <div className="insert-container">
       <div className="content">
@@ -20,10 +37,22 @@ export default function Agendar() {
             Voltar para a home
           </Link>
         </section>
-        <form>
-          <input placeholder="Nome do paciente" />
-          <input placeholder="Nome do exame" />
-          <input type="date" />
+        <form onSubmit={agendarPaciente}>
+          <input
+            placeholder="Nome do paciente"
+            value={paciente}
+            onChange={(e) => sPaciente(e.target.value)}
+          />
+          <input
+            placeholder="Nome do exame"
+            value={exame}
+            onChange={(e) => sExame(e.target.value)}
+          />
+          <input
+            type="date"
+            value={data}
+            onChange={(e) => sData(e.target.value)}
+          />
           <button className="button" type="submit">
             Agendar paciente
           </button>
